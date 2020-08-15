@@ -6,14 +6,12 @@
                                       version-control
                                       yaml
                                       helm
-                                      dash
                                       shell
                                       (shell :variables shell-default-shell 'ansi-term)
                                       (shell :variables shell-default-term-shell "/bin/zsh")
                                       ruby
                                       ruby-on-rails
                                       gtags
-                                      themes-megapack
                                       fasd
                                       restclient
                                       javascript
@@ -25,4 +23,6 @@
                                       lsp
                                       scala-lsp
                                       org-roam
+                                      python
+                                      django                                      
                                       ))
