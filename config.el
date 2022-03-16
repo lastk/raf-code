@@ -17,7 +17,19 @@
 (setq-default python-format-on-save t)
 
 
-  ;;; TypeScript 
+ ;;; TypeScript 
 (setq-default typescript-fmt-on-save t)
 (setq-default typescript-linter 'tslint)
 (setq-default tide-tsserver-executable "/usr/bin/tsserver")
+
+;;; Javascript
+
+(setq-default js-indent-level 2)
+
+(eval-after-load 'js-mode
+  '(add-hook 'js-mode-hook #'add-node-modules-path))
+
+;;; org-roam
+;;; https://github.com/syl20bnr/spacemacs/pull/14004/files
+(setq org-roam-directory "~/Dropbox/notes")
+(setq-default org-enable-roam-support t)

@@ -22,7 +22,5 @@
                                       treemacs
                                       lsp
                                       scala-lsp
-                                      org-roam
-                                      python
-                                      django                                      
+                                      sml
                                       ))
