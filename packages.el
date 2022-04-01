@@ -3,6 +3,7 @@
 
 (defconst raf-code-packages
   '(nord-theme
+    powerline-evil
     add-node-modules-path
     sml-mode
     )
@@ -20,4 +21,8 @@
   (use-package sml-mode)
   )
 
+ (defun raf-code/init-powerline-evil ()
+    (use-package powerline-evil)
+  (setq dotspacemacs-mode-line-theme '(vim-powerline :separator 'slant))
+  )
 ;;; packages.el ends here
