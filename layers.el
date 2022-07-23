@@ -23,4 +23,6 @@
                                       lsp
                                       scala-lsp
                                       sml
+                                      multiple-cursors
+                                      restclient
                                       ))

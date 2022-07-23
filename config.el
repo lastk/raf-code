@@ -10,7 +10,8 @@
 
 ;;; Ruby
 (setq-default ruby-enable-enh-ruby-mode t)
-(setq-default ruby-backend 'lsp)
+(setq-default ruby-backend 'robe)
+(setq-default ruby-insert-encoding-magic-comment nil)
 
 ;;;; Python
 (setq-default python-backend 'anaconda)
@@ -33,3 +34,8 @@
 ;;; https://github.com/syl20bnr/spacemacs/pull/14004/files
 (setq org-roam-directory "~/Dropbox/notes")
 (setq-default org-enable-roam-support t)
+
+
+;;; multiple-cursors
+(setq-default dotspacemacs-configuration-layers '(
+  (multiple-cursors :variables multiple-cursors-backend 'evil-mc)))
