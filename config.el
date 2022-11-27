@@ -21,11 +21,19 @@
  ;;; TypeScript 
 (setq-default typescript-fmt-on-save t)
 (setq-default typescript-linter 'tslint)
-(setq-default tide-tsserver-executable "/usr/bin/tsserver")
+(setq-default dotspacemacs-configuration-layers '(
+                                                  (typescript :variables typescript-backend 'lsp)))
+;(setq-default tide-tsserver-executable "/usr/bin/tsserver")
 
 ;;; Javascript
 
 (setq-default js-indent-level 2)
+(setq-default
+ ;; web-mode
+ web-mode-markup-indent-offset 2
+ web-mode-css-indent-offset 2
+ web-mode-code-indent-offset 2
+ web-mode-attr-indent-offset 2)
 
 (eval-after-load 'js-mode
   '(add-hook 'js-mode-hook #'add-node-modules-path))
