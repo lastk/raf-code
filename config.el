@@ -10,7 +10,7 @@
 
 ;;; Ruby
 (setq-default ruby-enable-enh-ruby-mode t)
-(setq-default ruby-backend 'robe)
+;;(setq-default ruby-backend 'robe)
 (setq-default ruby-insert-encoding-magic-comment nil)
 
 ;;;; Python
@@ -47,3 +47,7 @@
 ;;; multiple-cursors
 (setq-default dotspacemacs-configuration-layers '(
   (multiple-cursors :variables multiple-cursors-backend 'evil-mc)))
+;; rip grep
+(custom-set-variables
+ '(helm-ag-base-command "rg --no-heading")
+ `(helm-ag-success-exit-status '(0 2)))
