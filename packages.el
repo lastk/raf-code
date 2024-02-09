@@ -8,7 +8,14 @@
     org-modern
     ripgrep
     sqlite3
+    ob-sql-mode
     )
+  )
+
+
+(defun raf-code/init-ob-sql-mode ()
+  (use-package ob-sql-mode)
+  (add-to-list 'org-babel-load-languages '(sqlite . t))
   )
 
 (defun raf-code/init-nord-theme ()

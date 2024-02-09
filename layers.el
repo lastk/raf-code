@@ -5,8 +5,9 @@
                                       syntax-checking
                                       version-control
                                       yaml
-                                      ;;ivy
+                                      ;; ivy
                                       compleseus
+                                      ;;helm
                                       shell
                                       (shell :variables shell-default-shell 'ansi-term)
                                       (shell :variables shell-default-term-shell "/bin/zsh")
@@ -35,4 +36,5 @@
                                       spacemacs-org
                                       spacemacs-completion
                                       spacemacs-modeline
+                                      sql
                                       ))
