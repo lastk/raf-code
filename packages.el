@@ -9,6 +9,7 @@
     ripgrep
     sqlite3
     ob-sql-mode
+    fzf
     )
   )
 
@@ -47,6 +48,11 @@
 (defun raf-code/init-ripgrep()
   (use-package ripgrep)
   )
+
+(defun raf-code/init-fzf()
+  (use-package fzf)
+  )
+;
 ; Org-mode settings
 ;;(defun raf-code/init-org-mode()
 ;;  (use-package org-bullets
