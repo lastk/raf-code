@@ -9,8 +9,12 @@
     ripgrep
     sqlite3
     ob-sql-mode
-    fzf
+    (asdf.el :location (recipe
+                        :fetcher github
+                        :repo "tabfugnic/asdf.el"
+                        :files ("*.el" "dist")))
     )
+  fzf
   )
 
 
@@ -39,7 +43,7 @@
 (defun raf-code/init-vue ()
   (use-package vue)
   (vue :variables vue-backend 'lsp)
-)
+  )
 
 (defun raf-code/init-org-modern()
   (use-package org-modern)
@@ -52,8 +56,14 @@
 (defun raf-code/init-fzf()
   (use-package fzf)
   )
-;
-; Org-mode settings
+
+(defun raf-code/init-asdf.el()
+  (use-package asdf)
+  (asdf-enable)
+  )
+
+                                        ;
+;; Org-mode settings
 ;;(defun raf-code/init-org-mode()
 ;;  (use-package org-bullets
 ;;    :config

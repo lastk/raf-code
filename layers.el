@@ -37,4 +37,5 @@
                                       spacemacs-completion
                                       spacemacs-modeline
                                       sql
+                                      github-copilot
                                       ))
