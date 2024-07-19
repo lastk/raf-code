@@ -18,12 +18,12 @@
 (setq-default python-format-on-save t)
 
 
- ;;; TypeScript 
+ ;;; TypeScript
 (setq-default typescript-fmt-on-save t)
 (setq-default typescript-linter 'tslint)
 (setq-default dotspacemacs-configuration-layers '(
                                                   (typescript :variables typescript-backend 'lsp)))
-;(setq-default tide-tsserver-executable "/usr/bin/tsserver")
+                                        ;(setq-default tide-tsserver-executable "/usr/bin/tsserver")
 
 ;;; Javascript
 
@@ -46,8 +46,25 @@
 
 ;;; multiple-cursors
 (setq-default dotspacemacs-configuration-layers '(
-  (multiple-cursors :variables multiple-cursors-backend 'evil-mc)))
+                                                  (multiple-cursors :variables multiple-cursors-backend 'evil-mc)))
 ;; rip grep
 (custom-set-variables
  '(helm-ag-base-command "rg --no-heading")
  `(helm-ag-success-exit-status '(0 2)))
+
+
+;; Copilot
+
+;; accept completion from copilot and fallback to company
+
+(with-eval-after-load 'company
+  ;; disable inline previews
+  (delq 'company-preview-if-just-one-frontend company-frontends))
+
+(with-eval-after-load 'copilot
+  (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+  (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+  (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
+  (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
+
+(add-hook 'prog-mode-hook 'copilot-mode)
