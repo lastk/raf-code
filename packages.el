@@ -2,19 +2,20 @@
 ;;; Code:
 
 (defconst raf-code-packages
-  '(nord-theme
+  '(
+    nord-theme
     powerline-evil
     add-node-modules-path
     org-modern
     ripgrep
     sqlite3
     ob-sql-mode
+    fzf
     (asdf.el :location (recipe
                         :fetcher github
                         :repo "tabfugnic/asdf.el"
                         :files ("*.el" "dist")))
     )
-  fzf
   )
 
 
@@ -62,7 +63,6 @@
   (asdf-enable)
   )
 
-                                        ;
 ;; Org-mode settings
 ;;(defun raf-code/init-org-mode()
 ;;  (use-package org-bullets
