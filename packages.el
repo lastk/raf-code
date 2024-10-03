@@ -4,7 +4,8 @@
 (defconst raf-code-packages
   '(
     nord-theme
-    powerline-evil
+    ;;;powerline-evil
+    telephone-line
     add-node-modules-path
     org-modern
     ripgrep
@@ -30,8 +31,13 @@
 (defun raf-code/init-nord-theme ()
   (use-package nord-theme
     :init
-    (load-theme 'nord t)
+    (spacemacs/load-theme 'nord :disable t)
     )
+  )
+
+(defun raf-code/init-telephone-line ()
+  (use-package telephone-line)
+  (telephone-line-mode 1)
   )
 
 (defun raf-code/init-powerline-evil ()
