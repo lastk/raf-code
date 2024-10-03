@@ -11,10 +11,7 @@
     sqlite3
     ob-sql-mode
     fzf
-    (asdf.el :location (recipe
-                        :fetcher github
-                        :repo "tabfugnic/asdf.el"
-                        :files ("*.el" "dist")))
+    ob-go
     )
   )
 
@@ -27,7 +24,6 @@
 (defun raf-code/init-nord-theme ()
   (use-package nord-theme
     :init
-                                        ; (add-to-list 'custom-theme-load-path (expand-file-name "/home/rafael/.emacs.d/elpa/develop/nord-theme-20200620.1122/")) ; TODO: need to fix this
     (load-theme 'nord t)
     )
   )
@@ -39,11 +35,6 @@
 
 (defun raf-code/init-sqlite3 ()
   (use-package sqlite3)
-  )
-
-(defun raf-code/init-vue ()
-  (use-package vue)
-  (vue :variables vue-backend 'lsp)
   )
 
 (defun raf-code/init-org-modern()
@@ -61,6 +52,10 @@
 (defun raf-code/init-asdf.el()
   (use-package asdf)
   (asdf-enable)
+  )
+
+(defun raf-code/init-ob-go()
+  (use-package ob-go)
   )
 
 ;; Org-mode settings
