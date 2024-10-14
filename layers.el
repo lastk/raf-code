@@ -11,7 +11,7 @@
                                       shell
                                       (shell :variables shell-default-shell 'ansi-term)
                                       (shell :variables shell-default-term-shell "/bin/zsh")
-                                      (ruby :variables ruby-backend 'robe )
+                                      (ruby :variables ruby-backend 'lsp )
                                       ruby-on-rails
                                       gtags
                                       fasd
