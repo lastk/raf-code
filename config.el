@@ -38,12 +38,6 @@
 (eval-after-load 'js-mode
   '(add-hook 'js-mode-hook #'add-node-modules-path))
 
-;;; org-roam
-;;; https://github.com/syl20bnr/spacemacs/pull/14004/files
-(setq org-roam-directory "~/Dropbox/notes")
-(setq-default org-enable-roam-support t)
-
-
 ;;; multiple-cursors
 (setq-default dotspacemacs-configuration-layers '(
                                                   (multiple-cursors :variables multiple-cursors-backend 'evil-mc)))
@@ -52,6 +46,8 @@
  '(helm-ag-base-command "rg --no-heading")
  `(helm-ag-success-exit-status '(0 2)))
 
+; org
+(setq org-agenda-files  (list "~/Dropbox/org"))
 
 ;; lsp-booster
 (defun lsp-booster--advice-json-parse (old-fn &rest args)

@@ -1,7 +1,11 @@
 (configuration-layer/declare-layers '(auto-completion
                                       git
                                       markdown
-                                      org
+                                      (org
+                                       :variables
+                                       org-enable-roam-support t
+                                       org-enable-roam-ui t
+                                       )
                                       syntax-checking
                                       version-control
                                       yaml

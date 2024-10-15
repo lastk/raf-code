@@ -13,6 +13,7 @@
     ob-sql-mode
     fzf
     ob-go
+    org
     (copilot :location (recipe
                         :fetcher github
                         :repo "copilot-emacs/copilot.el"
@@ -53,6 +54,21 @@
   (use-package org-modern)
   )
 
+(defun raf-code/init-org ()
+  (with-eval-after-load 'org
+    (setq
+     org-directory "~/Dropbox/org" ;; needs to be defined for `org-default-notes-file'
+     org-default-notes-file (expand-file-name "inbox.org" org-directory)
+     )
+    (setq org-agenda-files (list org-directory))
+
+  ;;; org-roam
+  ;;; https://github.com/syl20bnr/spacemacs/pull/14004/files
+    (setq org-roam-directory "~/Dropbox/notes")
+    (setq-default org-enable-roam-support t)
+    )
+  )
+
 (defun raf-code/init-ripgrep()
   (use-package ripgrep)
   )
@@ -73,17 +89,14 @@
 (defun raf-code/init-copilot ()
   (use-package copilot
     :defer t)
-
   (with-eval-after-load 'company
     ;; disable inline previews
     (delq 'company-preview-if-just-one-frontend company-frontends))
-
   (with-eval-after-load 'copilot
     (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
     (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
     (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
     (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
-
   (add-hook 'prog-mode-hook 'copilot-mode)
   )
 
