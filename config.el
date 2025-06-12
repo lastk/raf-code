@@ -46,8 +46,9 @@
  '(helm-ag-base-command "rg --no-heading")
  `(helm-ag-success-exit-status '(0 2)))
 
-; org
+                                        ; org
 (setq org-agenda-files  (list "~/Dropbox/org"))
+(setq org-enable-modern-support t)
 
 ;; lsp-booster
 (defun lsp-booster--advice-json-parse (old-fn &rest args)

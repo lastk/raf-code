@@ -7,7 +7,6 @@
     ;;;powerline-evil
     telephone-line
     add-node-modules-path
-    org-modern
     ripgrep
     sqlite3
     ob-sql-mode
@@ -19,6 +18,7 @@
                         :repo "copilot-emacs/copilot.el"
                         :files ("*.el" "dist"))
              )
+
     )
 
   )
@@ -50,9 +50,6 @@
   (use-package sqlite3)
   )
 
-(defun raf-code/init-org-modern()
-  (use-package org-modern)
-  )
 
 (defun raf-code/init-org ()
   (with-eval-after-load 'org
