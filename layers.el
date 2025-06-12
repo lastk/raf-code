@@ -21,7 +21,6 @@
                                       fasd
                                       javascript
                                       typescript
-                                      vue
                                       vim-powerline
                                       ;;elixir
                                       treemacs
@@ -41,4 +40,10 @@
                                       spacemacs-completion
                                       spacemacs-modeline
                                       sql
+                                      python
+                                      (python :variables python-backend 'lsp python-lsp-server 'pyright)
+
+                                      ;;; experimenting
+                                      llm-client
+                                      github-copilot
                                       ))

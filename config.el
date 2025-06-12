@@ -86,6 +86,12 @@
   (setq lsp-disabled-clients '(ruby-ls solidity rubocop-ls sorbet-ls))
   )
 
+
+;; make emacs transparent
+;;(set-frame-parameter nil 'alpha-background 80) [1]
+;; setting above doesnt work with emacsclient
+(add-to-list 'default-frame-alist '(alpha-background . 80))
+
 ;; Copilot
 
 ;; accept completion from copilot and fallback to company
