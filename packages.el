@@ -51,18 +51,17 @@
 
 
 (defun raf-code/init-org ()
-  (with-eval-after-load 'org
-    (setq
-     org-directory "~/Dropbox/org" ;; needs to be defined for `org-default-notes-file'
-     org-default-notes-file (expand-file-name "inbox.org" org-directory)
-     )
-    (setq org-agenda-files (list org-directory))
+  (setq org-enable-modern-support t)
+  (setq-default org-enable-roam-support t)
+  )
 
-  ;;; org-roam
-  ;;; https://github.com/syl20bnr/spacemacs/pull/14004/files
-    (setq org-roam-directory "~/Dropbox/notes")
-    (setq-default org-enable-roam-support t)
-    )
+(defun raf-code/post-init-org ()
+  ;; org-roam
+  (setq org-agenda-files  (list "~/Dropbox/org/"))
+
+  (setq org-directory "~/Dropbox/org/")
+  (setq org-default-notes-file (concat org-directory "inbox.org"))
+  (setq org-roam-directory "~/Dropbox/notes/")
   )
 
 (defun raf-code/init-ripgrep()
