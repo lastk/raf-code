@@ -87,6 +87,9 @@
   (setq lsp-disabled-clients '(ruby-ls solidity rubocop-ls sorbet-ls))
   )
 
+;; LSP performance tweaks
+(setq lsp-enable-file-watchers nil)            ;; Don't watch every file in the project
+(setq read-process-output-max (* 1024 1024))   ;; 1MB buffer for LSP server communication
 
 ;; make emacs transparent
 ;;(set-frame-parameter nil 'alpha-background 80) [1]
